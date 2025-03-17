@@ -29,8 +29,34 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Cloudflare Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is configured to deploy on [Cloudflare Pages](https://pages.cloudflare.com/) using Wrangler.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Local Development with Wrangler
+
+To run the development server with Wrangler:
+
+```bash
+# First build the project
+npm run build
+
+# Then run the local development server with Wrangler
+npm run pages:dev
+```
+
+### Deploying to Cloudflare Pages
+
+To deploy your application to Cloudflare Pages:
+
+```bash
+# First build the project
+npm run build
+
+# Then deploy to Cloudflare Pages
+npm run pages:deploy
+```
+
+You'll need to authenticate with Cloudflare the first time you deploy. Follow the prompts in the terminal to log in and select your account and project.
+
+For more information, check out the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
