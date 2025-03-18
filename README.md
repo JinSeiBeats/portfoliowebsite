@@ -1,3 +1,5 @@
+# Portfolio Website
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -33,17 +35,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 This project is configured to deploy on [Cloudflare Pages](https://pages.cloudflare.com/) using Wrangler.
 
-### Local Development with Wrangler
+### Local Development
 
-To run the development server with Wrangler:
+For local development, use:
 
 ```bash
-# First build the project
-npm run build
-
-# Then run the local development server with Wrangler
-npm run pages:dev
+npm run dev
 ```
+
+This will start the Next.js development server.
+
+### Building for Production
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This will generate a static export in the `out` directory.
 
 ### Deploying to Cloudflare Pages
 
@@ -57,6 +67,56 @@ npm run build
 npm run pages:deploy
 ```
 
-You'll need to authenticate with Cloudflare the first time you deploy. Follow the prompts in the terminal to log in and select your account and project.
+You'll need to authenticate with Cloudflare the first time you deploy:
 
-For more information, check out the [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/).
+```bash
+npx wrangler login
+```
+
+### Cloudflare Pages Dashboard Deployment
+
+Alternatively, you can deploy directly from the Cloudflare Pages dashboard:
+
+1. Go to the Cloudflare Pages dashboard
+2. Create a new project
+3. Connect your GitHub repository
+4. Set the build command to `npm run build`
+5. Set the build output directory to `out`
+6. Click "Save and Deploy"
+
+### Adding to GitHub Repository
+
+To add this project to a GitHub repository:
+
+1. Initialize a Git repository (if not already done):
+   ```bash
+   git init
+   ```
+
+2. Add your files to Git:
+   ```bash
+   git add .
+   ```
+
+3. Commit your changes:
+   ```bash
+   git commit -m "Initial commit with portfolio website and Cloudflare Pages configuration"
+   ```
+
+4. Create a new repository on GitHub:
+   - Go to [GitHub](https://github.com/) and sign in
+   - Click on the "+" icon and select "New repository"
+   - Enter a repository name (e.g., "portfolio-website")
+   - Choose whether to make it public or private
+   - Click "Create repository"
+
+5. Connect your local repository to GitHub:
+   ```bash
+   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+6. Set up GitHub integration with Cloudflare Pages (optional):
+   - In the Cloudflare Pages dashboard, connect to your GitHub repository
+   - Configure automatic deployments on push to main branch
